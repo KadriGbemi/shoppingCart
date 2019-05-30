@@ -1,0 +1,27 @@
+.App-header-mobile {
+  padding: 16px 40px;
+
+  .App-header-mobile-nav-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .App-header-mobile-icon {
+    display: flex;
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-right: 4px;
+    }
+  }
+
+  .App-header-mobile-title {
+    text-align: center;
+    padding-top: 24px;
+  }
+}
+
+.App-header-main-nav-bar {
+  display: none;
+}
