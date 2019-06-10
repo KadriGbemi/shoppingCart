@@ -1,17 +1,30 @@
 import React from 'react';
-import './styles/mobile-navbar.scss';
+import './styles/Mobile-navbar.scss';
 import Icon from '@material-ui/core/Icon';
+import Badge from '@material-ui/core/Badge';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from '../MaterialDesignTheme';
 
-function MobileNavigationBar(){
+
+
+function MobileNavigationBar(props){
     return(
        <div className="App-header-mobile">
         <div className="App-header-mobile-nav-bar">
         <div className="App-header-mobile-icon">
-            <span><Icon>menu</Icon></span>Menu
+            <span><Icon>menu</Icon> Menu</span>
         </div>
-        <div className="App-header-mobile-icon">
-            <span><Icon>shopping_cart</Icon></span>Cart
-        </div>
+
+        <ThemeProvider theme={theme}>
+        <Badge badgeContent={props.quantity} color="secondary">
+            <div className="App-header-mobile-icon"  onClick={props.handleShoppingCartClickOpen}>
+            <div className="App-header-main-shopping-cart" >
+                <span className={props.shoppingCartIconAnimate}><Icon>{props.icon}</Icon></span>CART
+            </div>
+            </div>
+            </Badge>
+        </ThemeProvider>
+
         </div>
         <h3 className="App-header-mobile-title">SHOEMARKET</h3>
        </div>

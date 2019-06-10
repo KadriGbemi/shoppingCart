@@ -1,0 +1,23 @@
+div {
+    .mobile-shopping-cart-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .mobile-shopping-cart-item-img{
+        width: 150px;
+        height: 150px;
+    }
+    div{
+        display:flex;
+        justify-content: space-between;
+        height: 40px;
+        .mobile-shopping-cart-item-input-field{
+            width: 32px;
+        }
+    }
+    .divider{
+        width: 100%;
+        margin: 16px;
+    }
+    }
+}

@@ -1,5 +1,5 @@
 .App-header-mobile {
-  padding: 16px 40px;
+  padding: 24px 40px;
 
   .App-header-mobile-nav-bar {
     display: flex;
@@ -7,13 +7,20 @@
   }
 
   .App-header-mobile-icon {
-    display: flex;
-
+    display:flex;
     span {
       display: flex;
       align-items: center;
       margin-right: 4px;
+      transition: -5s margin;
     }
+    .App-header-main-shopping-cart{
+      display: flex;
+      background-color: #1c4656;
+      padding: 8px;
+      justify-content: space-evenly;
+      width: 80px;
+  }
   }
 
   .App-header-mobile-title {
