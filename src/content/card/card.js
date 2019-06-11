@@ -10,7 +10,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import useStyles from '../../MaterialDesignStyle';
 import theme from '../../MaterialDesignTheme';
 
-import './Card.scss';
+import './card.scss';
 
 
 function AppCard(props) {

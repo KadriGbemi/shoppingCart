@@ -25,7 +25,7 @@ function MobileVersionShoppingCartItem(props){
             <ThemeProvider theme = {theme}>
                 <Button size="small" variant="contained" color="secondary"
                 className={classes.buttons}
-                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease")}>-</Button>
+                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease", index)}>-</Button>
                 <TextField
                    id="outlined-bare"
                     value={item.count}
@@ -33,14 +33,17 @@ function MobileVersionShoppingCartItem(props){
                     className={classes.input}
                 />
                 <Button size="small" variant="contained" color="primary" className={classes.buttons}
-                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase")}>+</Button>
+                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase", index)}>+</Button>
             </ThemeProvider>
             </div>
-            <CloseIcon onClick={() => props.deleteShoppingCartItem(item.id)}/>
+            <CloseIcon onClick={() => props.deleteShoppingCartItem(item.id, index)}/>
             <Divider className="divider"/>
         </div>
     })
 
+    if (!props.cartItems.length) {
+        return <div> Your cart is empty</div>;
+    }
     return (
         <div>
             {cartItem}

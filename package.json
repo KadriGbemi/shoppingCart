@@ -2,7 +2,7 @@
   "name": "shopping-cart",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kadri.github.io/shopping-cart-demo",
+  "homepage": "https://KadriGbemi.github.io/shoppingCart",
   "dependencies": {
     "@material-ui/core": "^4.0.2",
     "@material-ui/icons": "^4.0.1",

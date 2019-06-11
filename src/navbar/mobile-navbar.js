@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Mobile-navbar.scss';
+import './styles/mobile-navbar.scss';
 import Icon from '@material-ui/core/Icon';
 import Badge from '@material-ui/core/Badge';
 import { ThemeProvider } from '@material-ui/styles';
