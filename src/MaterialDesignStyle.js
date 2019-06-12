@@ -8,14 +8,6 @@ const useStyles = makeStyles({
     media: {
       height: 144,
       paddingTop: '32%'
-    },
-    buttons:{
-      height: 40,
-    },
-     input:{
-      maxWidth: 48,
-      minWidth: 48,
-      margin: 10
     }
   });
 

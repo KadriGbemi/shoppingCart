@@ -13,6 +13,7 @@ import {ThemeProvider} from '@material-ui/styles';
 import theme from '../MaterialDesignTheme';
 
 import MobileVersionShoppingCartItem from './MobileVersionShoppingCartItem';
+import MainVersionShoppingCartItem from './MainVersionShoppingCartItem';
 import './styles/ShoppingCart.scss';
 
 class ShoppingCart extends Component {
@@ -45,6 +46,11 @@ class ShoppingCart extends Component {
                     </header>
                     <DialogContent>
                         <MobileVersionShoppingCartItem
+                        cartItems = {cartItemsArray}
+                       handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
+                       deleteShoppingCartItem = {deleteShoppingCartItem}/>
+
+                       <MainVersionShoppingCartItem
                         cartItems = {cartItemsArray}
                        handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
                        deleteShoppingCartItem = {deleteShoppingCartItem}/>

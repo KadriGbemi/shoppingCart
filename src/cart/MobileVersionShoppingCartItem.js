@@ -1,52 +1,43 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import './styles/MobileVersionShoppingCartItem.scss';
-import CloseIcon from '@material-ui/icons/Close';
+import Icon from '@material-ui/core/Icon';
 import Divider from '@material-ui/core/Divider';
 import { ThemeProvider } from '@material-ui/styles';
-import useStyles from '../MaterialDesignStyle';
 import theme from '../MaterialDesignTheme';
 
 function MobileVersionShoppingCartItem(props){
-    const classes =  useStyles();
-    const cartItem = props.cartItems.map((item, index) => {
-        return <div
-        className="mobile-shopping-cart-item"
-        key={index}>
-        <h2> Cart items:</h2>
-        <img src={require( '../assets/images/' + item.image)}
-        alt={item.errorImage}
-        className="mobile-shopping-cart-item-img"/>
-        <p> {item.title}</p>
-        <h2> {item.totalPrice} €</h2>
-         <h2>{item.price} € x {item.count}</h2>
-            <div>
-            <ThemeProvider theme = {theme}>
-                <Button size="small" variant="contained" color="secondary"
-                className={classes.buttons}
-                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease", index)}>-</Button>
-                <TextField
-                   id="outlined-bare"
-                    value={item.count}
-                    variant="outlined"
-                    className={classes.input}
-                />
-                <Button size="small" variant="contained" color="primary" className={classes.buttons}
-                onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase", index)}>+</Button>
-            </ThemeProvider>
-            </div>
-            <CloseIcon onClick={() => props.deleteShoppingCartItem(item.id, index)}/>
-            <Divider className="divider"/>
+    const cartItems = props.cartItems.map((item, index) => {
+        return <div key={index} className="mobile-shopping-cart-items">
+        <div>
+            <p>{item.title}</p>
+            <img src={require( '../assets/images/' + item.image)}
+            alt={item.errorImage}
+            className="mobile-shopping-cart-item-img"/>
         </div>
+        <div className="mobile-shopping-cart-item">
+            <p> Price: {item.totalPrice} €</p>
+            <p>{item.price} € x {item.count}</p>
+                  <div className="mobile-shopping-cart-item-form-field">
+                    <ThemeProvider theme = {theme}>
+                    <p> <Icon size="small" variant="contained" color="secondary"
+                        onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease", index)}>remove_circle</Icon></p>
+                            <input type="input" className="mobile-shopping-cart-item-input-field" value={item.count}/> 
+                    <p> <Icon size="small" variant="contained" color="primary" 
+                        onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase", index)}>add_circle</Icon></p>
+                    </ThemeProvider>
+                </div>
+        <p><Icon onClick={() => props.deleteShoppingCartItem(item.id, index)}> delete_forever</Icon></p>
+        </div>
+            <Divider className="divider"/>
+    </div>
     })
 
     if (!props.cartItems.length) {
-        return <div> Your cart is empty</div>;
+        return <div className="mobile-shopping-cart-items"> Your cart is empty</div>;
     }
     return (
         <div>
-            {cartItem}
+            {cartItems}
         </div>
     );
 }

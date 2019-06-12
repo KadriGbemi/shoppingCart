@@ -8,7 +8,7 @@ const AppData = [{
     },
     {
         "id":2,
-        "title": "AIR JORDAN -YEEZY",
+        "title": "YEEZY",
         "description": "YEEZY BOOST 350 V2 ZEBRA OG BRED 2019 BRED",
         "price": 69,
         "image": 'canvas-shoes-close-up.jpg',
