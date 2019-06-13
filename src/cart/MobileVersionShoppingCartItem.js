@@ -10,7 +10,7 @@ function MobileVersionShoppingCartItem(props){
         return <div key={index} className="mobile-shopping-cart-items">
         <div>
             <p>{item.title}</p>
-            <img src={require( '../assets/images/' + item.image)}
+            <img src= {props.handleImageError(item.image)}
             alt={item.errorImage}
             className="mobile-shopping-cart-item-img"/>
         </div>
@@ -21,8 +21,8 @@ function MobileVersionShoppingCartItem(props){
                     <ThemeProvider theme = {theme}>
                     <p> <Icon size="small" variant="contained" color="secondary"
                         onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease", index)}>remove_circle</Icon></p>
-                            <input type="input" className="mobile-shopping-cart-item-input-field" value={item.count}/> 
-                    <p> <Icon size="small" variant="contained" color="primary" 
+                            <input type="input" className="mobile-shopping-cart-item-input-field" value={item.count}/>
+                    <p> <Icon size="small" variant="contained" color="primary"
                         onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase", index)}>add_circle</Icon></p>
                     </ThemeProvider>
                 </div>

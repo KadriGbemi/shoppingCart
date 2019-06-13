@@ -13,38 +13,39 @@ import theme from '../../MaterialDesignTheme';
 import './card.scss';
 
 
-function AppCard(props) {
-    const classes =  useStyles();
-    return(
-            <div className="App-card">
-            <Card className={classes.card}>
-            <CardMedia
-                className= {classes.media}
-                image = {require( '../../assets/images/' + props.eachShoppingCartData.image)}
-                title= {props.eachShoppingCartData.title}
-            />
-            <CardContent>
-                <div className="App-card-add-icon">
-                  <ThemeProvider theme = {theme}>
-                  <Fab color="primary" aria-label="Add"
-                  onClick={() => props.addItems(props.eachShoppingCartData, props.index)}>
-                  <AddIcon/>
-                </Fab>
-                  </ThemeProvider>
-                </div>
-                <Typography gutterBottom variant="h5" component="h2">
-                {props.eachShoppingCartData.title}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                {props.eachShoppingCartData.description}
-                </Typography>
-                <Typography  gutterBottom variant="h4"  component="h2">
-                {props.eachShoppingCartData.price} €
-                </Typography>
-            </CardContent>
-        </Card>
-             </div>
-        );
+function AppCard(props){
+  const classes =  useStyles();
+  return(
+          <div className="App-card">
+          <Card>
+          <CardMedia
+              className= {classes.media}
+              image = {props.handleImageError(props.eachShoppingCartData.image)}
+              title= {props.eachShoppingCartData.title}
+          />
+
+          <CardContent>
+              <div className="App-card-add-icon">
+                <ThemeProvider theme = {theme}>
+                <Fab color="primary" aria-label="Add"
+                onClick={() => props.addItems(props.eachShoppingCartData, props.index)}>
+                <AddIcon/>
+              </Fab>
+                </ThemeProvider>
+              </div>
+              <Typography gutterBottom variant="h5" component="h2">
+              {props.eachShoppingCartData.title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+              {props.eachShoppingCartData.description}
+              </Typography>
+              <Typography  gutterBottom variant="h4"  component="h2">
+              {props.eachShoppingCartData.price} €
+              </Typography>
+          </CardContent>
+      </Card>
+            </div>
+      );
     }
 
 

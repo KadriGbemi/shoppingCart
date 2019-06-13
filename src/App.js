@@ -20,7 +20,14 @@ class App extends Component {
         icon: 'shopping_cart',
         getShoppingCartModal: false
     }
-
+    handleImageError =(imgPath)=>{
+        try {
+          return (require('./assets/images/' + imgPath));
+         } catch (err) {
+        //   console.log('Path has Error', err);
+            return (require('./assets/images/default-error-image-for-item.jpg'));
+         }
+    }
     addItems = (item) => {
         const {cartItems, quantity} = this.state.cart
         const items = {
@@ -129,9 +136,13 @@ class App extends Component {
                     onClose={this.handleShoppingCartDisplay}
                     cartItemsArray={this.state.cart.cartItems}
                     handleChangeInCartItemsQuantity={this.handleChangeInCartItemsQuantity}
-                    deleteShoppingCartItem={this.deleteShoppingCartItem}/>
+                    deleteShoppingCartItem={this.deleteShoppingCartItem}
+                    handleImageError = {this.handleImageError}
+                    />
                 <div className="App-content">
-                    <Cards shoppingCartData={this.state.data} addItems={this.addItems}/>
+                    <Cards
+                    handleImageError = {this.handleImageError}
+                    shoppingCartData={this.state.data} addItems={this.addItems}/>
                 </div>
             </div>
         )

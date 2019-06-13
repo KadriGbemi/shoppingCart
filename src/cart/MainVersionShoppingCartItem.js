@@ -8,8 +8,8 @@ function MainVersionShoppingCartItem(props){
      const cartItems = props.cartItems.map((item, index) => {
          return <div key={index} className="main-shopping-cart-item">
             <div className="main-shopping-cart-item-column">
-                <div>  
-                <img src={require( '../assets/images/' + item.image)}
+                <div>
+                <img src={props.handleImageError(item.image)}
                     alt={item.errorImage}
                      className="main-shopping-cart-item-img"/></div>
             </div>
@@ -23,8 +23,8 @@ function MainVersionShoppingCartItem(props){
                     <ThemeProvider theme = {theme}>
                     <p> <Icon size="small" variant="contained" color="secondary"
                         onClick={() => props.handleChangeInCartItemsQuantity(item.id, "decrease", index)}>remove_circle</Icon></p>
-                            <input type="input" className="main-shopping-cart-item-input-field" value={item.count}/> 
-                    <p> <Icon size="small" variant="contained" color="primary" 
+                            <input type="input" className="main-shopping-cart-item-input-field" value={item.count}/>
+                    <p> <Icon size="small" variant="contained" color="primary"
                         onClick={() => props.handleChangeInCartItemsQuantity(item.id, "increase", index)}>add_circle</Icon></p>
                     </ThemeProvider>
                 </div>
@@ -36,7 +36,7 @@ function MainVersionShoppingCartItem(props){
             </div>
          </div>
      })
-    
+
     if (!props.cartItems.length) {
         return <div className="main-shopping-cart-item"> Your cart is empty</div>;
     }

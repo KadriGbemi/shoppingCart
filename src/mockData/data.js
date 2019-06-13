@@ -3,7 +3,7 @@ const AppData = [{
         "title": "AIR JORDAN",
         "description": "AIR JORDAN AIR JORDAN 4 RETRO OG BRED 2019 BRED",
         "price": 79,
-        "image": 'alexandra-gorn-300407.jpg',
+        "image": 'alexandra-gorn-3004071.jpg',
         "errorImage": 'alexandra-gorn-300407.jpg'
     },
     {

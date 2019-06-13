@@ -19,7 +19,7 @@ import './styles/ShoppingCart.scss';
 class ShoppingCart extends Component {
     render() {
         const {cartItemsArray, handleChangeInCartItemsQuantity, onClose,
-        openShoppingCart, deleteShoppingCartItem} = this.props
+        openShoppingCart, deleteShoppingCartItem, handleImageError} = this.props
         if (!openShoppingCart) {
             return null;
         }
@@ -48,12 +48,15 @@ class ShoppingCart extends Component {
                         <MobileVersionShoppingCartItem
                         cartItems = {cartItemsArray}
                        handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
-                       deleteShoppingCartItem = {deleteShoppingCartItem}/>
+                       deleteShoppingCartItem = {deleteShoppingCartItem}
+                       handleImageError = {handleImageError}/>
 
                        <MainVersionShoppingCartItem
                         cartItems = {cartItemsArray}
                        handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
-                       deleteShoppingCartItem = {deleteShoppingCartItem}/>
+                       deleteShoppingCartItem = {deleteShoppingCartItem}
+                       handleImageError = {handleImageError}
+                       />
 
                     </DialogContent>
                     <DialogActions>
