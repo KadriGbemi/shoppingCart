@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
 import MobileNavbar from './navbar/mobile-navbar'
-import Navbar from './navbar/navbar'
+import Navbar from './navbar/navbar';
 import Cards from './content/cards/Cards';
 import AppData from './mockData/data';
-
 import ShoppingCart from './cart/ShoppingCart';
 
 import './App.scss';
@@ -14,7 +13,7 @@ class App extends Component {
         data: AppData,
         cart: {
             cartItems: [],
-            quantity: 0
+            quantity: 0,
         },
         shoppingCartIconAnimate: '',
         icon: 'shopping_cart',
@@ -28,6 +27,24 @@ class App extends Component {
             return (require('./assets/images/default-error-image-for-item.jpg'));
          }
     }
+    updateCartItemsQuantityByInput=(e)=> {
+        let {cartItems, quantity} = this.state.cart
+        this.setState({
+            cart: {
+                cartItems: cartItems.map((item) => {
+                    if(item.title === e.target.name) {
+                        const quantityValue = quantity - item.count
+                        item.count = Number(e.target.value);
+                        quantity = quantityValue + item.count
+                        console.log(quantity)
+                        item.totalPrice = (item.price * item.count).toFixed(2);
+                    }
+                    return item
+                }),
+            quantity: quantity
+            }
+        })
+      }
     addItems = (item) => {
         const {cartItems, quantity} = this.state.cart
         const items = {
@@ -56,18 +73,20 @@ class App extends Component {
                 }
                 return items.id === item.id;
             })
-            .slice(0, 1); //Get array with highest count with array order
+            .slice(0, 1); //Get array with highest count by array order
     }
-    handleChangeInCartItemsQuantity = (itemIdentifier, change) => {
-        const {cartItems, quantity} = this.state.cart
+    updateCartItemsQuantityOnClick = (itemIdentifier, change) => {
+        let {cartItems, quantity} = this.state.cart
+
         switch (change) {
-            case "increase":
+            case "increase": //increase cart items quantity
                 this.setState({
                     cart: {
                         cartItems: cartItems.map((item) => {
                             if (item.id === itemIdentifier) {
                                 item.count += 1;
                                 item.totalPrice = (item.price * item.count).toFixed(2);
+
                             }
                             return item
                         }),
@@ -75,16 +94,17 @@ class App extends Component {
                     }
                 })
                 break;
-            case "decrease":
+            case "decrease": //decrease cart items quantity
                 this.setState({
                     cart: {
                         cartItems: cartItems.filter((item) => {
                             if (item.id === itemIdentifier) {
-                                item.totalPrice = (item.price / item.count).toFixed(2);
-                                if (item.count === 1 || null) {
+                                if (item.count === 0 || null) {
+                                    quantity += 1;
                                     return item.id !== itemIdentifier
                                 } else {
                                     item.count -= 1;
+                                    item.totalPrice = (item.price * item.count).toFixed(2);
                                 }
                             }
                             return item;
@@ -105,7 +125,7 @@ class App extends Component {
                     cartItems: cartItems.filter((item) => {
                         return item.id !== itemIdentifier
                     }),
-                    quantity: quantity - Number(cartItems[index].count)
+                    quantity: quantity - cartItems[index].count
                 }
             })
     }
@@ -135,7 +155,8 @@ class App extends Component {
                     openShoppingCart={this.state.getShoppingCartModal}
                     onClose={this.handleShoppingCartDisplay}
                     cartItemsArray={this.state.cart.cartItems}
-                    handleChangeInCartItemsQuantity={this.handleChangeInCartItemsQuantity}
+                    handleChangeInCartItemsQuantity={this.updateCartItemsQuantityOnClick}
+                    updateCartItemsQuantityByInput = {this.updateCartItemsQuantityByInput}
                     deleteShoppingCartItem={this.deleteShoppingCartItem}
                     handleImageError = {this.handleImageError}
                     />

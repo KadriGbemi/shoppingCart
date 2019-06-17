@@ -19,7 +19,7 @@ import './styles/ShoppingCart.scss';
 class ShoppingCart extends Component {
     render() {
         const {cartItemsArray, handleChangeInCartItemsQuantity, onClose,
-        openShoppingCart, deleteShoppingCartItem, handleImageError} = this.props
+        openShoppingCart, deleteShoppingCartItem, handleImageError, updateCartItemsQuantityByInput} = this.props
         if (!openShoppingCart) {
             return null;
         }
@@ -49,13 +49,15 @@ class ShoppingCart extends Component {
                         cartItems = {cartItemsArray}
                        handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
                        deleteShoppingCartItem = {deleteShoppingCartItem}
-                       handleImageError = {handleImageError}/>
+                       handleImageError = {handleImageError}
+                       updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
                        <MainVersionShoppingCartItem
                         cartItems = {cartItemsArray}
                        handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
                        deleteShoppingCartItem = {deleteShoppingCartItem}
                        handleImageError = {handleImageError}
+                       updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}
                        />
 
                     </DialogContent>
@@ -66,7 +68,7 @@ class ShoppingCart extends Component {
                                 size="small"
                                 onClick={onClose}
                                 color="primary">
-                                Continue Shopping
+                                Back
                             </Button>
                             <Button
                                 variant="contained"
