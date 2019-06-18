@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import MobileNavbar from './navbar/mobile-navbar'
-import Navbar from './navbar/navbar';
+import NavigationBar from './navbar/navbar';
 import Cards from './content/cards/Cards';
 import AppData from './mockData/data';
 import ShoppingCart from './cart/ShoppingCart';
@@ -85,7 +85,7 @@ class App extends Component {
                         cartItems: cartItems.map((item) => {
                             if (item.id === itemIdentifier) {
                                 item.count += 1;
-                                item.totalPrice = (item.price * item.count).toFixed(2);
+                                item.totalPrice = Math.round((item.price * item.count));
 
                             }
                             return item
@@ -104,7 +104,7 @@ class App extends Component {
                                     return item.id !== itemIdentifier
                                 } else {
                                     item.count -= 1;
-                                    item.totalPrice = (item.price * item.count).toFixed(2);
+                                    item.totalPrice = Math.round((item.price * item.count));
                                 }
                             }
                             return item;
@@ -145,7 +145,7 @@ class App extends Component {
                         quantity={this.state.cart.quantity}
                         shoppingCartIconAnimate={this.state.shoppingCartIconAnimate}
                         icon={this.state.icon}/>
-                    <Navbar
+                    <NavigationBar
                         handleShoppingCartClickOpen={this.handleShoppingCartDisplay}
                         quantity={this.state.cart.quantity}
                         shoppingCartIconAnimate={this.state.shoppingCartIconAnimate}

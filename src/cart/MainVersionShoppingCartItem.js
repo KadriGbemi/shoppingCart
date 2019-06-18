@@ -9,27 +9,26 @@ import Typography from '@material-ui/core/Typography';
 
 function MainVersionShoppingCartItem(props) {
     const cartItems = props.cartItems.map((item, index) => {
-            return<div className="main-shopping-cart-item">
+            return <div key={index} className="main-shopping-cart-item">
             <Grid item xs={12}>
-                <div key={index} className="main-shopping-cart-item">
-                <Grid item xs={5}>
+                <div className="main-shopping-cart-item">
+                <Grid item xs={4}>
                 <img
                 src={props.handleImageError(item.image)}
                 alt={item.errorImage}
                 className="main-shopping-cart-item-img"/>
                 </Grid>
-                <Grid item xs={6}>
-                <Typography Wrap>
-                <h5>{item.title}</h5>
+                <Grid item xs={5}>
+                <Typography variant="h6" gutterBottom> {item.title}</Typography>
+                <Typography variant="body2" gutterBottom>
                 {item.description}
                 </Typography>
                 </Grid>
-                <Grid item xs={3}>
-                <Typography>
-                <p>{item.price} x{item.count}</p>
-                <p>{item.totalPrice} €</p></Typography>
+                <Grid item xs={2}>
+                <Typography>{item.price} x{item.count}</Typography>
+                <Typography variant="h5" gutterBottom>{item.totalPrice} €</Typography>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item>
                 <div className="main-shopping-cart-item-form-field">
                 <ThemeProvider theme={theme}>
                     <p>
@@ -56,7 +55,7 @@ function MainVersionShoppingCartItem(props) {
                 </ThemeProvider>
             </div>
                </Grid>
-               <Grid item xs={1}>
+               <Grid item>
                <Typography>
                <Icon onClick={() => props.deleteShoppingCartItem(item.id, index)}>
                delete_forever</Icon>
