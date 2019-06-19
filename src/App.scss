@@ -1,3 +1,4 @@
+@import './Animation';
 
 .App {
     .App-header {
@@ -8,85 +9,18 @@
         top: 0;
         z-index: 1;
     }
-    @-webkit-keyframes bounce {
-        0%,
-        100%,
-        20%,
-        53%,
-        80% {
-            -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
+}
 
-        40%,
-        43% {
-            -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            -webkit-transform: translate3d(0, -30px, 0);
-            transform: translate3d(0, -30px, 0);
-        }
+.shopping-cart-item-form-field {
+    display: flex;
+    justify-content: center;
+    .shopping-cart-item-input-field {
+        width: 24px;
+        height: 32px;
+        border-radius: 4px;
+        margin: 8px 4px 0;
+        border: 0.8px solid lightgray;
+        text-align: center;
 
-        70% {
-            -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            -webkit-transform: translate3d(0, -15px, 0);
-            transform: translate3d(0, -15px, 0);
-        }
-
-        90% {
-            -webkit-transform: translate3d(0,-4px,0);
-            transform: translate3d(0,-4px,0);
-        }
     }
-
-    @keyframes bounce {
-        0%,
-        100%,
-        20%,
-        53%,
-        80% {
-            -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-
-        40%,
-        43% {
-            -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            -webkit-transform: translate3d(0, -30px, 0);
-            transform: translate3d(0, -30px, 0);
-        }
-
-        70% {
-            -webkit-transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-            -webkit-transform: translate3d(0, -15px, 0);
-            transform: translate3d(0, -15px, 0);
-        }
-
-        90% {
-            -webkit-transform: translate3d(0,-4px,0);
-            transform: translate3d(0,-4px,0);
-        }
-    }
-
-    .bounce {
-        -webkit-animation-name: bounce;
-        animation-name: bounce;
-        animation-iteration-count: 1;
-        -webkit-transform-origin: center bottom;
-        transform-origin: center bottom;
-    }
-
-    .animated {
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-    }
-
 }

@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 
 import MobileNavbar from './navbar/mobile-navbar'
-import NavigationBar from './navbar/navbar';
+import DesktopNavbar from './navbar/desktop-navbar';
 import Cards from './content/cards/Cards';
-import AppData from './mockData/data';
-import ShoppingCart from './cart/ShoppingCart';
+import CartData from './cart/data';
+import ShoppingCart from './cart/shopping-cart';
 
 import './App.scss';
 
 class App extends Component {
     state = {
-        data: AppData,
+        data: CartData,
         cart: {
             cartItems: [],
             quantity: 0,
         },
         shoppingCartIconAnimate: '',
-        icon: 'shopping_cart',
+        cartIcon: 'shopping_cart',
         getShoppingCartModal: false
     }
     handleImageError =(imgPath)=>{
@@ -36,8 +36,7 @@ class App extends Component {
                         const quantityValue = quantity - item.count
                         item.count = Number(e.target.value);
                         quantity = quantityValue + item.count
-                        console.log(quantity)
-                        item.totalPrice = (item.price * item.count).toFixed(2);
+                        item.totalPrice = Math.round((item.price * item.count));
                     }
                     return item
                 }),
@@ -60,7 +59,7 @@ class App extends Component {
                 quantity: (Number(quantity) + 1)
             },
             shoppingCartIconAnimate: "bounce animated",
-            icon: 'add_shopping_cart'
+            cartIcon: 'add_shopping_cart'
         })
     }
     getCartItems = (items, cartItems) => {
@@ -144,12 +143,12 @@ class App extends Component {
                         handleShoppingCartClickOpen={this.handleShoppingCartDisplay}
                         quantity={this.state.cart.quantity}
                         shoppingCartIconAnimate={this.state.shoppingCartIconAnimate}
-                        icon={this.state.icon}/>
-                    <NavigationBar
+                        icon={this.state.cartIcon}/>
+                    <DesktopNavbar
                         handleShoppingCartClickOpen={this.handleShoppingCartDisplay}
                         quantity={this.state.cart.quantity}
                         shoppingCartIconAnimate={this.state.shoppingCartIconAnimate}
-                        icon={this.state.icon}/>
+                        icon={this.state.cartIcon}/>
                 </header>
                 <ShoppingCart
                     openShoppingCart={this.state.getShoppingCartModal}

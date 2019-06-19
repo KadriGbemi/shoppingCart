@@ -5,7 +5,7 @@ import Badge from '@material-ui/core/Badge';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from '../MaterialDesignTheme';
 
-function NavigationBar(props){
+function DesktopNavbar(props){
     return(
       <div className="App-header-main-nav-bar">
         <h3 className="App-header-main-cart-title">SHOEMARKET</h3>
@@ -23,4 +23,4 @@ function NavigationBar(props){
 
 }
 
-export default NavigationBar
+export default DesktopNavbar

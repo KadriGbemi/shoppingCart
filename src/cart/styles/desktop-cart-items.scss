@@ -1,0 +1,12 @@
+@media only screen and (min-width: 700px) {
+    .mobile-shopping-cart-items {
+        display: none;
+    }
+    .main-shopping-cart-items {
+        display: flex;
+        margin-top: 16px;
+        .main-shopping-cart-item-img {
+            width: 124px;
+        }
+    }
+}

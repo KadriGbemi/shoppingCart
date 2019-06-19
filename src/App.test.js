@@ -6,8 +6,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import App from './App';
 import MobileNavbar from './navbar/mobile-navbar';
-import NavigationBar from './navbar/navbar';
-import ShoppingCart from './cart/ShoppingCart';
+import DesktopNavbar from './navbar/desktop-navbar';
+import ShoppingCart from './cart/shopping-cart';
 import Cards from './content/cards/Cards';
 
 
@@ -38,14 +38,14 @@ describe('Unit testing of App Components using Enzyme and Chai', () => {
           <div className="App">
               <header/>
               <MobileNavbar/>
-              <NavigationBar />
+              <DesktopNavbar />
               <ShoppingCart />
               <div className="App-content"/>
           </div>
         ));
         expect(wrapperWithChildren.contains([<header/>,
                                         <MobileNavbar/>,
-                                        <NavigationBar />, <ShoppingCart />])).to.equal(true);
+                                        <DesktopNavbar />, <ShoppingCart />])).to.equal(true);
     });
 
     it('It displays the application shopping card component', () => {

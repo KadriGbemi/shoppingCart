@@ -7,19 +7,25 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import Fab from "@material-ui/core/Fab";
 import CloseIcon from '@material-ui/icons/Close';
-
 import {ThemeProvider} from '@material-ui/styles';
-
 import theme from '../MaterialDesignTheme';
 
-import MobileVersionShoppingCartItem from './MobileVersionShoppingCartItem';
-import MainVersionShoppingCartItem from './MainVersionShoppingCartItem';
-import './styles/ShoppingCart.scss';
+import MobileCartItems from './item/mobile-cart-items';
+import DesktopCartItems from './item/desktop-cart-items';
+
+import './styles/shopping-cart.scss';
 
 class ShoppingCart extends Component {
     render() {
-        const {cartItemsArray, handleChangeInCartItemsQuantity, onClose,
-        openShoppingCart, deleteShoppingCartItem, handleImageError, updateCartItemsQuantityByInput} = this.props
+        const {
+            cartItemsArray,
+            handleChangeInCartItemsQuantity,
+            onClose,
+            openShoppingCart,
+            deleteShoppingCartItem,
+            handleImageError,
+            updateCartItemsQuantityByInput
+        } = this.props
         if (!openShoppingCart) {
             return null;
         }
@@ -39,42 +45,33 @@ class ShoppingCart extends Component {
                         <DialogActions onClick={onClose}>
                             <ThemeProvider theme={theme}>
                                 <Fab size="small" color="primary" aria-label="Close">
-                                <CloseIcon/>
+                                    <CloseIcon/>
                                 </Fab>
                             </ThemeProvider>
                         </DialogActions>
                     </header>
                     <DialogContent>
-                        <MobileVersionShoppingCartItem
-                        cartItems = {cartItemsArray}
-                       handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
-                       deleteShoppingCartItem = {deleteShoppingCartItem}
-                       handleImageError = {handleImageError}
-                       updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
+                        <MobileCartItems
+                            cartItems={cartItemsArray}
+                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                            deleteShoppingCartItem={deleteShoppingCartItem}
+                            handleImageError={handleImageError}
+                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
-                       <MainVersionShoppingCartItem
-                        cartItems = {cartItemsArray}
-                       handleChangeInCartItemsQuantity = {handleChangeInCartItemsQuantity}
-                       deleteShoppingCartItem = {deleteShoppingCartItem}
-                       handleImageError = {handleImageError}
-                       updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}
-                       />
+                        <DesktopCartItems
+                            cartItems={cartItemsArray}
+                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                            deleteShoppingCartItem={deleteShoppingCartItem}
+                            handleImageError={handleImageError}
+                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
                     </DialogContent>
                     <DialogActions>
                         <ThemeProvider theme={theme}>
-                            <Button
-                                variant="contained"
-                                size="small"
-                                onClick={onClose}
-                                color="primary">
+                            <Button variant="contained" size="small" onClick={onClose} color="primary">
                                 Back
                             </Button>
-                            <Button
-                                variant="contained"
-                                size="small"
-                                onClick={onClose}
-                                color="primary">
+                            <Button variant="contained" size="small" onClick={onClose} color="primary">
                                 Checkout
                             </Button>
                         </ThemeProvider>
