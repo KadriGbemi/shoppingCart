@@ -1,18 +1,18 @@
 
 @media only screen and (min-width: 700px) {
     /* For Desktop and tablet: */
-    .App-header-mobile {
+    .App-mobile-nav-bar {
         display: none;
     }
-    .App-header-main-nav-bar {
+    .App-desktop-nav-bar {
         display: flex;
         justify-content: space-between;
         padding: 8px 40px;
     }
-    .App-header-main-cart {
+    .App-desktop-nav-bar-shopping-cart {
         display: flex;
         align-items: center;
-        .App-header-main-shopping-cart {
+        .App-desktop-nav-bar-shopping-cart-icon {
             display: flex;
             background-color: #1c4656;
             padding: 8px;

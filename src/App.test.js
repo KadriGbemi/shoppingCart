@@ -14,27 +14,27 @@ import Cards from './content/cards/Cards';
 Enzyme.configure({adapter: new Adapter()});
 
 
-describe('Unit testing of App Components using Enzyme and Chai', () => {
+describe('Unit testing of App (UI) Components using Enzyme and Chai', () => {
 
-    let wrapper;
+    let component;
     beforeEach(() => {
-        wrapper = shallow(<App/>);
+        component = shallow(<App/>);
     });
 
     it('renders without crashing', () => {
-        expect(wrapper.length).to.equal(1);
+        expect(component.length).to.equal(1);
     });
 
     it('It includes div with className App', () => {
-        expect(wrapper.find('div.App')).to.have.lengthOf(1);
+        expect(component.find('div.App')).to.have.lengthOf(1);
     });
 
     it('It includes header with className App-header', () => {
-        expect(wrapper.find('header.App-header')).to.have.lengthOf(1);
+        expect(component.find('header.App-header')).to.have.lengthOf(1);
     });
 
     it('It renders the necessary application components', () => {
-        const wrapperWithChildren = shallow((
+        const wrapper = shallow((
           <div className="App">
               <header/>
               <MobileNavbar/>
@@ -43,17 +43,17 @@ describe('Unit testing of App Components using Enzyme and Chai', () => {
               <div className="App-content"/>
           </div>
         ));
-        expect(wrapperWithChildren.contains([<header/>,
+        expect(wrapper.contains([<header/>,
                                         <MobileNavbar/>,
                                         <DesktopNavbar />, <ShoppingCart />])).to.equal(true);
     });
 
     it('It displays the application shopping card component', () => {
-      const wrapperContent = shallow((
+      const wrapper = shallow((
         <div className="App-content">
            <Cards/>
         </div>
       ));
-      expect(wrapperContent.contains(<Cards/>)).to.equal(true);
+      expect(wrapper.contains(<Cards/>)).to.equal(true);
   });
 });

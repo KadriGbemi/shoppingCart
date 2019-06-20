@@ -1,20 +1,23 @@
-.App-header-mobile {
+.App-desktop-nav-bar {
+    display: none;
+}
+
+.App-mobile-nav-bar {
     padding: 24px 40px;
 
-    .App-header-mobile-nav-bar {
+    .App-mobile-nav-bar-header {
         display: flex;
         justify-content: space-between;
     }
 
-    .App-header-mobile-icon {
+    .App-mobile-nav-bar-icon {
         display: flex;
         span {
             display: flex;
             align-items: center;
             margin-right: 4px;
-            transition: -5s margin;
         }
-        .App-header-main-shopping-cart {
+        .App-mobile-nav-bar-shopping-cart-icon {
             display: flex;
             background-color: #1c4656;
             padding: 8px;
@@ -23,12 +26,8 @@
         }
     }
 
-    .App-header-mobile-title {
+    .App-mobile-nav-bar-title {
         text-align: center;
         padding-top: 24px;
     }
-}
-
-.App-header-main-nav-bar {
-    display: none;
 }
