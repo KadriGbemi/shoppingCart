@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -11,7 +10,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import {ThemeProvider} from '@material-ui/styles';
 import theme from '../MaterialDesignTheme';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
-import Typography from '@material-ui/core/Typography';
 
 import MobileCartItems from './item/mobile-cart-items';
 import DesktopCartItems from './item/desktop-cart-items';
@@ -45,37 +43,37 @@ class ShoppingCart extends Component {
                             {"Your Cart"}
                         </DialogTitle>
 
-                    <DialogActions onClick={onClose}>
-                        <ThemeProvider theme={theme}>
-                            <Fab size="small" color="primary" aria-label="Close">
-                                <CloseIcon/>
-                            </Fab>
-                        </ThemeProvider>
-                    </DialogActions>
-                </header>
-                <DialogContent>
-                    <MobileCartItems
-                    cartItems={cartItemsArray}
-                    handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
-                    deleteShoppingCartItem={deleteShoppingCartItem}
-                    handleImageError={handleImageError}
-                    updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
+                        <DialogActions onClick={onClose}>
+                            <ThemeProvider theme={theme}>
+                                <Fab size="small" color="primary" aria-label="Close">
+                                    <CloseIcon/>
+                                </Fab>
+                            </ThemeProvider>
+                        </DialogActions>
+                    </header>
+                    <DialogContent>
+                        <MobileCartItems
+                            cartItems={cartItemsArray}
+                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                            deleteShoppingCartItem={deleteShoppingCartItem}
+                            handleImageError={handleImageError}
+                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
-                    <DesktopCartItems
-                    cartItems={cartItemsArray}
-                    handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
-                    deleteShoppingCartItem={deleteShoppingCartItem}
-                    handleImageError={handleImageError}
-                    updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
-                </DialogContent>
+                        <DesktopCartItems
+                            cartItems={cartItemsArray}
+                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                            deleteShoppingCartItem={deleteShoppingCartItem}
+                            handleImageError={handleImageError}
+                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
+                    </DialogContent>
                     <DialogActions>
                         <ThemeProvider theme={theme}>
-                                <Button variant="contained" size="medium" onClick={onClose} color="primary">
-                                    Back
-                                </Button>
-                                <Button variant="contained" size="medium" onClick={onClose} color="primary">
-                                    Checkout
-                                </Button>
+                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
+                                Back
+                            </Button>
+                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
+                                Checkout
+                            </Button>
                         </ThemeProvider>
                     </DialogActions>
                 </Dialog>
@@ -84,4 +82,4 @@ class ShoppingCart extends Component {
     }
 }
 
-export default withMobileDialog({breakpoint: 'xs'}) (ShoppingCart);
+export default withMobileDialog({breakpoint: 'xs'})(ShoppingCart);

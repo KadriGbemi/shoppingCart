@@ -43,8 +43,7 @@ function DesktopCartItems(props) {
                                 </p>
                                 <input
                                     name={cartItem.title}
-                                    type="input"
-                                    min="1"
+                                    type="number"
                                     className="shopping-cart-item-input-field"
                                     onChange={props.updateCartItemsQuantityByInput}
                                     value={cartItem.count}/>

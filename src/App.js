@@ -13,37 +13,37 @@ class App extends Component {
         data: CartData,
         cart: {
             cartItems: [],
-            quantity: 0,
+            quantity: 0
         },
         shoppingCartIconAnimate: '',
         cartIcon: 'shopping_cart',
         getShoppingCartModal: false
     }
-    handleImageError =(imgPath)=>{
+    handleImageError = (imgPath) => {
         try {
-          return (require('./assets/images/' + imgPath));
-         } catch (err) {
-        //   console.log('Path has Error', err);
+            return (require('./assets/images/' + imgPath));
+        } catch (err) {
+            //   console.log('Path has Error', err);
             return (require('./assets/images/default-error-image-for-item.jpg'));
-         }
+        }
     }
-    updateCartItemsQuantityByInput=(e)=> {
+    updateCartItemsQuantityByInput = (e) => {
         let {cartItems, quantity} = this.state.cart
         this.setState({
-            cart: {
-                cartItems: cartItems.map((item) => {
-                    if(item.title === e.target.name) {
-                        const quantityValue = quantity - item.count
-                        item.count = Number(e.target.value);
-                        quantity = quantityValue + item.count
-                        item.totalPrice = Math.round((item.price * item.count));
-                    }
-                    return item
-                }),
-            quantity: quantity
-            }
-        })
-      }
+                cart: {
+                    cartItems: cartItems.map((item) => {
+                        if (item.title === e.target.name) {
+                            const quantityWithoutItemCount = quantity - item.count
+                            item.count = Number(e.target.value)
+                            quantity = quantityWithoutItemCount + item.count
+                            item.totalPrice = Math.round((item.price * item.count));
+                        }
+                        return item
+                    }),
+                    quantity: quantity
+                }
+            })
+    }
     addItems = (item) => {
         const {cartItems, quantity} = this.state.cart
         const items = {
@@ -113,13 +113,16 @@ class App extends Component {
                 })
                 break;
             default:
-                console.log("Handle change")
+                console.log("default")
                 break;
         }
     }
     deleteShoppingCartItem = (itemIdentifier, index) => {
-        const {cartItems, quantity} = this.state.cart
-            this.setState({
+        const {cartItems, quantity} = this
+            .state
+            .cart
+            this
+            .setState({
                 cart: {
                     cartItems: cartItems.filter((item) => {
                         return item.id !== itemIdentifier
@@ -155,14 +158,14 @@ class App extends Component {
                     onClose={this.handleShoppingCartDisplay}
                     cartItemsArray={this.state.cart.cartItems}
                     handleChangeInCartItemsQuantity={this.updateCartItemsQuantityOnClick}
-                    updateCartItemsQuantityByInput = {this.updateCartItemsQuantityByInput}
+                    updateCartItemsQuantityByInput={this.updateCartItemsQuantityByInput}
                     deleteShoppingCartItem={this.deleteShoppingCartItem}
-                    handleImageError = {this.handleImageError}
-                    />
+                    handleImageError={this.handleImageError}/>
                 <div className="App-content">
                     <Cards
-                    handleImageError = {this.handleImageError}
-                    shoppingCartData={this.state.data} addItems={this.addItems}/>
+                        handleImageError={this.handleImageError}
+                        shoppingCartData={this.state.data}
+                        addItems={this.addItems}/>
                 </div>
             </div>
         )
