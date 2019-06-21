@@ -6,9 +6,14 @@ body {
 }
 
 h1, h2, h4, h5, p {
-  color: #14323e;
+    color: #14323e;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

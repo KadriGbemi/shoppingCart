@@ -14,7 +14,7 @@ function DesktopCartItems(props) {
                 <Grid container spacing={2}>
                     <Grid item sm={3}>
                         <img
-                            src={props.handleImageError(cartItem.image)}
+                            src={props.handleImageError(cartItem.image, cartItem.errorImage)}
                             alt={cartItem.errorImage}
                             className="main-shopping-cart-item-img"/>
                     </Grid>
@@ -44,6 +44,7 @@ function DesktopCartItems(props) {
                                 <input
                                     name={cartItem.title}
                                     type="number"
+                                    min="0"
                                     className="shopping-cart-item-input-field"
                                     onChange={props.updateCartItemsQuantityByInput}
                                     value={cartItem.count}/>

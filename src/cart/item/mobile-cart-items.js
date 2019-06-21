@@ -20,7 +20,7 @@ function MobileCartItems(props) {
                     <Grid item xs={6}>
                         <Typography>
                             <img
-                                src={props.handleImageError(cartItem.image)}
+                                src={props.handleImageError(cartItem.image, cartItem.errorImage)}
                                 alt={cartItem.errorImage}
                                 className="mobile-shopping-cart-item-img"/>
                         </Typography>
@@ -43,6 +43,7 @@ function MobileCartItems(props) {
                                 <input
                                     name={cartItem.title}
                                     type="number"
+                                    min="0"
                                     className="shopping-cart-item-input-field"
                                     onChange={props.updateCartItemsQuantityByInput}
                                     value={cartItem.count}/>
