@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shoppingCart/static/css/main.71330c0d.chunk.css",
+    "main.css": "/shoppingCart/static/css/main.adcd7873.chunk.css",
     "main.js": "/shoppingCart/static/js/main.0a34b694.chunk.js",
     "main.js.map": "/shoppingCart/static/js/main.0a34b694.chunk.js.map",
     "runtime~main.js": "/shoppingCart/static/js/runtime~main.faecc4ad.js",
@@ -8,9 +8,9 @@
     "static/js/2.862f456d.chunk.js": "/shoppingCart/static/js/2.862f456d.chunk.js",
     "static/js/2.862f456d.chunk.js.map": "/shoppingCart/static/js/2.862f456d.chunk.js.map",
     "index.html": "/shoppingCart/index.html",
-    "precache-manifest.29e7d68da8e52fd81271cc3ac7f7d226.js": "/shoppingCart/precache-manifest.29e7d68da8e52fd81271cc3ac7f7d226.js",
+    "precache-manifest.ba545a362f4b9a0df13cbfa559892c92.js": "/shoppingCart/precache-manifest.ba545a362f4b9a0df13cbfa559892c92.js",
     "service-worker.js": "/shoppingCart/service-worker.js",
-    "static/css/main.71330c0d.chunk.css.map": "/shoppingCart/static/css/main.71330c0d.chunk.css.map",
+    "static/css/main.adcd7873.chunk.css.map": "/shoppingCart/static/css/main.adcd7873.chunk.css.map",
     "static/media/alexandra-gorn-300407.jpg": "/shoppingCart/static/media/alexandra-gorn-300407.65b97ec7.jpg",
     "static/media/canvas-shoes-close-up.jpg": "/shoppingCart/static/media/canvas-shoes-close-up.f958b880.jpg",
     "static/media/default-error-image-for-item.jpg": "/shoppingCart/static/media/default-error-image-for-item.3f9cb8e1.jpg",
