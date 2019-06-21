@@ -20,7 +20,7 @@ function AppCard(props) {
             <Card>
                 <CardMedia
                     className={classes.media}
-                    image={props.handleImageError(props.eachShoppingCartData.image)}
+                    image={props.handleImageError(props.eachShoppingCartData.image, props.eachShoppingCartData.errorImage)}
                     title={props.eachShoppingCartData.title}/>
 
                 <CardContent>

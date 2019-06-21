@@ -19,12 +19,12 @@ class App extends Component {
         cartIcon: 'shopping_cart',
         getShoppingCartModal: false
     }
-    handleImageError = (imgPath) => {
+    handleImageError = (imgPath, errorImage) => {
         try {
             return (require('./assets/images/' + imgPath));
         } catch (err) {
             //   console.log('Path has Error', err);
-            return (require('./assets/images/default-error-image-for-item.jpg'));
+            return (require('./assets/images/' + errorImage));
         }
     }
     updateCartItemsQuantityByInput = (e) => {
