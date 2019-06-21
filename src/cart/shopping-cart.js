@@ -9,6 +9,7 @@ import Fab from "@material-ui/core/Fab";
 import CloseIcon from '@material-ui/icons/Close';
 import {ThemeProvider} from '@material-ui/styles';
 import theme from '../MaterialDesignTheme';
+import withMobileDialog from '@material-ui/core/withMobileDialog';
 
 import MobileCartItems from './item/mobile-cart-items';
 import DesktopCartItems from './item/desktop-cart-items';
@@ -44,7 +45,7 @@ class ShoppingCart extends Component {
 
                         <DialogActions onClick={onClose}>
                             <ThemeProvider theme={theme}>
-                                <Fab size="small" color="primary" aria-label="Close">
+                                <Fab size="medium" color="primary" aria-label="Close">
                                     <CloseIcon/>
                                 </Fab>
                             </ThemeProvider>
@@ -68,10 +69,10 @@ class ShoppingCart extends Component {
                     </DialogContent>
                     <DialogActions>
                         <ThemeProvider theme={theme}>
-                            <Button variant="contained" size="small" onClick={onClose} color="primary">
+                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
                                 Back
                             </Button>
-                            <Button variant="contained" size="small" onClick={onClose} color="primary">
+                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
                                 Checkout
                             </Button>
                         </ThemeProvider>
@@ -82,4 +83,4 @@ class ShoppingCart extends Component {
     }
 }
 
-export default ShoppingCart;
+export default withMobileDialog({breakpoint: 'xs'}) (ShoppingCart);
