@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -41,45 +42,42 @@ class ShoppingCart extends Component {
 
                     <header className="shopping-cart-header">
                         <DialogTitle id="alert-dialog-slide-title">
-                            <Typography variant="h6" gutterBottom>
                             {"Your Cart"}
-                            </Typography>
                         </DialogTitle>
 
-                        <DialogActions onClick={onClose}>
-                            <ThemeProvider theme={theme}>
-                                <Fab size="small" color="primary" aria-label="Close">
-                                    <CloseIcon/>
-                                </Fab>
-                            </ThemeProvider>
-                        </DialogActions>
-                    </header>
-                    <DialogContent>
-                        <MobileCartItems
-                            cartItems={cartItemsArray}
-                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
-                            deleteShoppingCartItem={deleteShoppingCartItem}
-                            handleImageError={handleImageError}
-                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
-
-                        <DesktopCartItems
-                            cartItems={cartItemsArray}
-                            handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
-                            deleteShoppingCartItem={deleteShoppingCartItem}
-                            handleImageError={handleImageError}
-                            updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
-
-                    </DialogContent>
-                    <ThemeProvider theme={theme}>
-                    <DialogActions>
-                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
-                                Back
-                            </Button>
-                            <Button variant="contained" size="medium" onClick={onClose} color="primary">
-                                Checkout
-                            </Button>
+                    <DialogActions onClick={onClose}>
+                        <ThemeProvider theme={theme}>
+                            <Fab size="small" color="primary" aria-label="Close">
+                                <CloseIcon/>
+                            </Fab>
+                        </ThemeProvider>
                     </DialogActions>
-                    </ThemeProvider>
+                </header>
+                <DialogContent>
+                    <MobileCartItems
+                    cartItems={cartItemsArray}
+                    handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                    deleteShoppingCartItem={deleteShoppingCartItem}
+                    handleImageError={handleImageError}
+                    updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
+
+                    <DesktopCartItems
+                    cartItems={cartItemsArray}
+                    handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
+                    deleteShoppingCartItem={deleteShoppingCartItem}
+                    handleImageError={handleImageError}
+                    updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
+                </DialogContent>
+                    <DialogActions>
+                        <ThemeProvider theme={theme}>
+                                <Button variant="contained" size="medium" onClick={onClose} color="primary">
+                                    Back
+                                </Button>
+                                <Button variant="contained" size="medium" onClick={onClose} color="primary">
+                                    Checkout
+                                </Button>
+                        </ThemeProvider>
+                    </DialogActions>
                 </Dialog>
             </div>
         )
