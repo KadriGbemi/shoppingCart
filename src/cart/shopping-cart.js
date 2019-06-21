@@ -10,6 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import {ThemeProvider} from '@material-ui/styles';
 import theme from '../MaterialDesignTheme';
 import withMobileDialog from '@material-ui/core/withMobileDialog';
+import Typography from '@material-ui/core/Typography';
 
 import MobileCartItems from './item/mobile-cart-items';
 import DesktopCartItems from './item/desktop-cart-items';
@@ -40,12 +41,14 @@ class ShoppingCart extends Component {
 
                     <header className="shopping-cart-header">
                         <DialogTitle id="alert-dialog-slide-title">
+                            <Typography variant="h6" gutterBottom>
                             {"Your Cart"}
+                            </Typography>
                         </DialogTitle>
 
                         <DialogActions onClick={onClose}>
                             <ThemeProvider theme={theme}>
-                                <Fab size="medium" color="primary" aria-label="Close">
+                                <Fab size="small" color="primary" aria-label="Close">
                                     <CloseIcon/>
                                 </Fab>
                             </ThemeProvider>
@@ -67,16 +70,16 @@ class ShoppingCart extends Component {
                             updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
                     </DialogContent>
+                    <ThemeProvider theme={theme}>
                     <DialogActions>
-                        <ThemeProvider theme={theme}>
                             <Button variant="contained" size="medium" onClick={onClose} color="primary">
                                 Back
                             </Button>
                             <Button variant="contained" size="medium" onClick={onClose} color="primary">
                                 Checkout
                             </Button>
-                        </ThemeProvider>
                     </DialogActions>
+                    </ThemeProvider>
                 </Dialog>
             </div>
         )
