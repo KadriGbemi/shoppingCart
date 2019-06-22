@@ -1,4 +1,5 @@
 - About:
+
 This project is simple shopping cart application made with HTML, CSS flexbox layout, CSS3, Sass, ReactJs and React's Google material design. 
 
 
