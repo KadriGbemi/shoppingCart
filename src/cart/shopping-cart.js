@@ -19,7 +19,7 @@ import './styles/shopping-cart.scss';
 class ShoppingCart extends Component {
     render() {
         const {
-            cartItemsArray,
+            arrayOfShoppingCartItems,
             handleChangeInCartItemsQuantity,
             onClose,
             openShoppingCart,
@@ -53,14 +53,14 @@ class ShoppingCart extends Component {
                     </header>
                     <DialogContent>
                         <MobileCartItems
-                            cartItems={cartItemsArray}
+                            arrayOfShoppingCartItems={arrayOfShoppingCartItems}
                             handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
                             deleteShoppingCartItem={deleteShoppingCartItem}
                             handleImageError={handleImageError}
                             updateCartItemsQuantityByInput={updateCartItemsQuantityByInput}/>
 
                         <DesktopCartItems
-                            cartItems={cartItemsArray}
+                            arrayOfShoppingCartItems={arrayOfShoppingCartItems}
                             handleChangeInCartItemsQuantity={handleChangeInCartItemsQuantity}
                             deleteShoppingCartItem={deleteShoppingCartItem}
                             handleImageError={handleImageError}

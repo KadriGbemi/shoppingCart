@@ -11,26 +11,22 @@ Enzyme.configure({adapter: new Adapter()});
 
 describe('Unit testing of Desktop Navbar (UI) Component using Enzyme, Jest and Sinon', () => {
     let component;
+    let props;
     beforeEach(() => {
         component = shallow(<DesktopNavbar/>);
+        props = localStorage.getItem('cartItems')
     });
 
-        it('it renders without crashing', () => {
+        it('renders without crashing', () => {
             expect(component.length).toEqual(1);
         });
 
-        it('It renders together with props without crashing', () => {
-            const props = {
-                handleShoppingCartClickOpen: true,
-                quantity: 0,
-                shoppingCartIconAnimate: '',
-                cartIcon: 'shopping_cart'
-            }
+        it('renders together with props without crashing', () => {
             const wrapper = shallow(<DesktopNavbar {...props}/>);
             expect(wrapper.length).toEqual(1)
         });
 
-        it('It includes main div with className (App-desktop-nav-bar)', () => {
+        it('includes main div with className (App-desktop-nav-bar)', () => {
             expect(component.exists('.App-desktop-nav-bar')).toEqual(true);
         });
 
@@ -50,10 +46,7 @@ describe('Unit testing of Desktop Navbar (UI) Component using Enzyme, Jest and S
         });
 
         it('simulates click event to open the shopping cart', () => {
-            let handleShoppingCartDisplay = {
-                handleShoppingCartClickOpen: true
-            }
-            handleShoppingCartDisplay = sinon.spy();
+            const handleShoppingCartDisplay = sinon.spy();
             const wrapper = shallow(
                 <DesktopNavbar handleShoppingCartClickOpen={handleShoppingCartDisplay}/>
             );

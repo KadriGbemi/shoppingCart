@@ -1,4 +1,4 @@
-const AppData = [{
+const ArrayOfItemsAvailableForSale = [{
         "id":1,
         "title": "AIR JORDAN",
         "description": "AIR JORDAN 4 RETRO OG BRED 2019 BRED",
@@ -32,4 +32,4 @@ const AppData = [{
         "errorImage": 'default-error-image-for-item.jpg'
     }
 ]
-export default  AppData;
+export default ArrayOfItemsAvailableForSale;

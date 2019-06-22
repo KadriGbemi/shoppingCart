@@ -8,10 +8,7 @@ const useStyles = makeStyles({
     media: {
         height: 144,
         paddingTop: '32%'
-    },
-    appBar: {
-        position: 'relative',
-      },
+    }
 });
 
 export default useStyles

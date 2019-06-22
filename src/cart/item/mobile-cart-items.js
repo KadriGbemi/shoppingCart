@@ -9,7 +9,7 @@ import theme from '../../MaterialDesignTheme';
 import '../styles/mobile-cart-items.scss';
 
 function MobileCartItems(props) {
-    const cartItems = props.cartItems.map((cartItem, index) => {
+    const shoppingCartItems = props.arrayOfShoppingCartItems.map((cartItem, index) => {
             return <div key={index} className="mobile-shopping-cart-items">
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
@@ -65,14 +65,14 @@ function MobileCartItems(props) {
             </div>
         })
 
-    if (!props.cartItems.length) {
+    if (!props.arrayOfShoppingCartItems.length) {
         return <div className="mobile-shopping-cart-items">
             <Typography variant="body1" gutterBottom>
                 Your cart is empty
             </Typography>
         </div>;
     }
-    return (<div>{cartItems}</div>);
+    return (<div>{shoppingCartItems}</div>);
 }
 
 export default MobileCartItems

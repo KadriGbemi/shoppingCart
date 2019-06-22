@@ -20,8 +20,8 @@ function AppCard(props) {
             <Card>
                 <CardMedia
                     className={classes.media}
-                    image={props.handleImageError(props.eachShoppingCartData.image, props.eachShoppingCartData.errorImage)}
-                    title={props.eachShoppingCartData.title}/>
+                    image={props.handleImageError(props.itemAvailableForSale.image, props.itemAvailableForSale.errorImage)}
+                    title={props.itemAvailableForSale.title}/>
 
                 <CardContent>
                     <div className="App-card-add-icon">
@@ -29,19 +29,19 @@ function AppCard(props) {
                             <Fab
                                 color="primary"
                                 aria-label="Add"
-                                onClick={() => props.addItems(props.eachShoppingCartData, props.index)}>
+                                onClick={() => props.addShoppingCartItem(props.itemAvailableForSale)}>
                                 <AddIcon/>
                             </Fab>
                         </ThemeProvider>
                     </div>
                     <Typography gutterBottom variant="h5">
-                        {props.eachShoppingCartData.title}
+                        {props.itemAvailableForSale.title}
                     </Typography>
                     <Typography variant="body2">
-                        {props.eachShoppingCartData.description}
+                        {props.itemAvailableForSale.description}
                     </Typography>
                     <Typography gutterBottom variant="h4">
-                        {props.eachShoppingCartData.price}
+                        {props.itemAvailableForSale.price}
                         €
                     </Typography>
                 </CardContent>

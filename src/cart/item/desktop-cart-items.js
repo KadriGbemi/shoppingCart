@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import '../styles/desktop-cart-items.scss';
 
 function DesktopCartItems(props) {
-    const cartItems = props.cartItems.map((cartItem, index) => {
+    const shoppingCartItems = props.arrayOfShoppingCartItems.map((cartItem, index) => {
             return <div key={index} className="main-shopping-cart-items">
                 <Grid container spacing={2}>
                     <Grid item sm={3}>
@@ -68,14 +68,14 @@ function DesktopCartItems(props) {
             </div>
         })
 
-    if (!props.cartItems.length) {
+    if (!props.arrayOfShoppingCartItems.length) {
         return <div className="main-shopping-cart-items">
             <Typography variant="body1" gutterBottom>
                 Your cart is empty
             </Typography>
         </div>;
     }
-    return (<div>{cartItems}
+    return (<div>{shoppingCartItems}
     </div>);
 }
 
