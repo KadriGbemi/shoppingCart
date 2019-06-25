@@ -13,13 +13,13 @@ function MobileCartItems(props) {
         .arrayOfShoppingCartItems
         .map((cartItem, index) => {
             return <div key={index} className="mobile-shopping-cart-items">
-                <Grid container="container" spacing={3}>
-                    <Grid item="item" xs={12}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
                         <h4 className="App-primary-text">
                             {cartItem.title}
                         </h4>
                     </Grid>
-                    <Grid item="item" xs={6}>
+                    <Grid item xs={6}>
                         <Typography>
                             <img
                                 src={props.handleImageError(cartItem.image, cartItem.errorImage)}
@@ -27,7 +27,7 @@ function MobileCartItems(props) {
                                 className="mobile-shopping-cart-item-img"/>
                         </Typography>
                     </Grid>
-                    <Grid item="item" xs={6}>
+                    <Grid item xs={6}>
                         <p className="App-secondary-text">{cartItem.price} x {cartItem.count}</p>
                         <h4 className="App-primary-text">{cartItem.totalPrice} €</h4>
                         <div className="shopping-cart-item-form-field">
