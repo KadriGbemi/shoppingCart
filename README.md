@@ -14,7 +14,7 @@
 
 - How to run the project's test locally:
 
-  Use command 'npm test' to run unit testing for the app.
+  Use command 'yarn test' to run unit testing for the app.
 
 
 
