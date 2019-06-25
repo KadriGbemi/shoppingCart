@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import MobileNavbar from './navbar/mobile-navbar'
 import DesktopNavbar from './navbar/desktop-navbar';
-import Cards from './content/cards/Cards';
+import Cards from './content/allCards/cards';
 import ArrayOfItemsAvailableForSale from './cart/data';
 import ShoppingCart from './cart/shopping-cart';
 
