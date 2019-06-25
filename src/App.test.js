@@ -8,7 +8,7 @@ import App from './App';
 import MobileNavbar from './navbar/mobile-navbar';
 import DesktopNavbar from './navbar/desktop-navbar';
 import ShoppingCart from './cart/shopping-cart';
-import Cards from './content/cards/Cards';
+import Cards from './content/allCards/Cards';
 
 
 Enzyme.configure({adapter: new Adapter()});
