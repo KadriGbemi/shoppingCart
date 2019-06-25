@@ -39,7 +39,7 @@ class ShoppingCart extends Component {
                     aria-describedby="alert-dialog-slide-description">
 
                     <header className="shopping-cart-header">
-                        <DialogTitle id="alert-dialog-slide-title">
+                        <DialogTitle id="alert-dialog-slide-title" className="App-primary-text">
                             {"Your Cart"}
                         </DialogTitle>
 

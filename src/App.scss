@@ -4,10 +4,17 @@
     .App-header {
         background-color: #28657c;
         flex-direction: column;
-        color: white;
+        color: #eeeff0;
         position: sticky;
         top: 0;
         z-index: 1;
+    }
+    .App-primary-text {
+        font-weight: 600;
+    }
+    .App-secondary-text {
+        color: hsl(201, 23%, 34%);
+        font-weight: 400;
     }
 }
 

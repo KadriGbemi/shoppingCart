@@ -3,7 +3,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
 import {ThemeProvider} from '@material-ui/styles';
@@ -34,16 +34,16 @@ function AppCard(props) {
                             </Fab>
                         </ThemeProvider>
                     </div>
-                    <Typography gutterBottom variant="h5">
+                    <h4 className="App-primary-text">
                         {props.itemAvailableForSale.title}
-                    </Typography>
-                    <Typography variant="body2">
+                    </h4>
+                    <p className="App-secondary-text">
                         {props.itemAvailableForSale.description}
-                    </Typography>
-                    <Typography gutterBottom variant="h4">
+                    </p>
+                    <p className="App-primary-text">
                         {props.itemAvailableForSale.price}
                         €
-                    </Typography>
+                    </p>
                 </CardContent>
             </Card>
         </div>

@@ -9,15 +9,17 @@ import theme from '../../MaterialDesignTheme';
 import '../styles/mobile-cart-items.scss';
 
 function MobileCartItems(props) {
-    const shoppingCartItems = props.arrayOfShoppingCartItems.map((cartItem, index) => {
+    const shoppingCartItems = props
+        .arrayOfShoppingCartItems
+        .map((cartItem, index) => {
             return <div key={index} className="mobile-shopping-cart-items">
-                <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                        <Typography>
+                <Grid container="container" spacing={3}>
+                    <Grid item="item" xs={12}>
+                        <h4 className="App-primary-text">
                             {cartItem.title}
-                        </Typography>
+                        </h4>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item="item" xs={6}>
                         <Typography>
                             <img
                                 src={props.handleImageError(cartItem.image, cartItem.errorImage)}
@@ -25,12 +27,9 @@ function MobileCartItems(props) {
                                 className="mobile-shopping-cart-item-img"/>
                         </Typography>
                     </Grid>
-                    <Grid item xs={6}>
-                        <Typography>{cartItem.price}
-                            x{cartItem.count}</Typography>
-                        <Typography variant="h5" gutterBottom>{cartItem.totalPrice}
-                            €
-                        </Typography>
+                    <Grid item="item" xs={6}>
+                        <p className="App-secondary-text">{cartItem.price} x {cartItem.count}</p>
+                        <h4 className="App-primary-text">{cartItem.totalPrice} €</h4>
                         <div className="shopping-cart-item-form-field">
                             <ThemeProvider theme={theme}>
                                 <p>
@@ -67,7 +66,7 @@ function MobileCartItems(props) {
 
     if (!props.arrayOfShoppingCartItems.length) {
         return <div className="mobile-shopping-cart-items">
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" gutterBottom="gutterBottom">
                 Your cart is empty
             </Typography>
         </div>;

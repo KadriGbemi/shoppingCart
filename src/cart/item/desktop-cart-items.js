@@ -11,7 +11,7 @@ import '../styles/desktop-cart-items.scss';
 function DesktopCartItems(props) {
     const shoppingCartItems = props.arrayOfShoppingCartItems.map((cartItem, index) => {
             return <div key={index} className="main-shopping-cart-items">
-                <Grid container spacing={2}>
+                <Grid container spacing={1}>
                     <Grid item sm={3}>
                         <img
                             src={props.handleImageError(cartItem.image, cartItem.errorImage)}
@@ -19,19 +19,19 @@ function DesktopCartItems(props) {
                             className="main-shopping-cart-item-img"/>
                     </Grid>
                     <Grid item sm={4}>
-                        <Typography variant="h5" gutterBottom>
-                            {cartItem.title}</Typography>
-                        <Typography variant="body2" gutterBottom>
+                        <h4 className="App-primary-text">
+                            {cartItem.title}</h4>
+                        <p className="App-secondary-text">
                             {cartItem.description}
-                        </Typography>
+                        </p>
                     </Grid>
                     <Grid item sm={2}>
-                        <Typography>{cartItem.price}
-                            x{cartItem.count}</Typography>
-                        <Typography variant="h5" gutterBottom>{cartItem.totalPrice}
-                            €</Typography>
+                        <p className="App-secondary-text">{cartItem.price}
+                            x{cartItem.count}</p>
+                        <h4 className="App-primary-text">{cartItem.totalPrice}
+                            €</h4>
                     </Grid>
-                    <Grid item>
+                    <Grid item >
                         <div className="shopping-cart-item-form-field">
                             <ThemeProvider theme={theme}>
                                 <p>
